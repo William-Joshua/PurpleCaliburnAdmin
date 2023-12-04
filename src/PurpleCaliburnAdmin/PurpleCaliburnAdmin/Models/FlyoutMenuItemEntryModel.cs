@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PurpleCaliburnAdmin.Models
 {
-    public class NavMenuItemEntryModel
+    public class FlyoutMenuItemEntryModel
     {
         /// <summary>
         /// 菜单名称
