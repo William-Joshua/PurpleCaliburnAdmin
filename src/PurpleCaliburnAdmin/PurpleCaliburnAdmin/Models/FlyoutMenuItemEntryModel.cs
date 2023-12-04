@@ -21,7 +21,5 @@ namespace PurpleCaliburnAdmin.Models
         /// </summary>
         public bool AccessDenied { get; set; } = true;
 
-
-
     }
 }

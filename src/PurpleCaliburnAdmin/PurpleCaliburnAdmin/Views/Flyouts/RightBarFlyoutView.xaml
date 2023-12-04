@@ -4,9 +4,80 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PurpleCaliburnAdmin.Views.Flyouts"
+             xmlns:caliburn="http://www.caliburnproject.org"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="450" d:DesignWidth="240">
+    <UserControl.Resources>
+        <DataTemplate x:Key="flyoutMenuItem">
+            <Border >
+                <Grid   Height="48" Margin="8 2"  
+                    IsEnabled="{Binding AccessDenied}"
+                    caliburn:Message.Attach="[Event MouseLeftButtonDown] =  [Action GoToNavigateMenu($dataContext)]">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="64"></ColumnDefinition>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Image Grid.Column="0" Width="24" Height="24" 
+                       HorizontalAlignment="Right"  RenderOptions.BitmapScalingMode="HighQuality"
+                       VerticalAlignment="Center" >
+                        <Image.Style>
+                            <Style TargetType="Image">
+                                <Setter Property="Source" Value="{Binding IconGrayImageAddress}" />
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding AccessDenied}" Value="True" >
+                                        <Setter Property="Source" Value="{Binding IconImageAddress}" />
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Image.Style>
+                    </Image>
+                    <TextBlock Grid.Column="1" 
+                           Text="{Binding MenuName}"
+                           FontSize="16px" 
+                           Foreground="{Binding AccessDenied, Converter={StaticResource accessDeniedConverter}}"  
+                           FontWeight="DemiBold"  
+                           HorizontalAlignment="Left"  
+                           VerticalAlignment="Center"
+                           Margin="8, 0" />
+                    <Grid.Style>
+                        <Style>
+                            <Setter Property="Grid.Background" Value="#E8F4FF"/>
+                            <Style.Triggers>
+                                <Trigger Property="Grid.IsMouseOver" Value="True">
+                                    <Setter Property="Grid.Background" Value="#D1EAFF"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Grid.Style>
+                </Grid>
+                <Border.Style>
+                    <Style>
+                        <Setter Property="Border.Opacity" Value="1"/>
+                        <Style.Triggers>
+                            <Trigger Property="Border.IsMouseOver" Value="True">
+                                <Setter Property="Border.Opacity" Value="0.8" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Border.Style>
+            </Border>
+        </DataTemplate>
+    </UserControl.Resources>
     <Grid>
-            
+        <Grid.RowDefinitions>
+            <RowDefinition Height="36"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="1" Orientation="Vertical">
+            <ItemsControl ItemsSource="{Binding FlyoutMenuItems}"
+                          ItemTemplate="{StaticResource flyoutMenuItem}" >
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <StackPanel></StackPanel>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+            </ItemsControl>
+        </StackPanel>
+
     </Grid>
 </UserControl>

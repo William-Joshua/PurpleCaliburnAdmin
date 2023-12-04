@@ -1,18 +1,43 @@
 ﻿<controls:MetroWindow x:Class="PurpleCaliburnAdmin.Views.ShellView"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-         xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
-         xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:PurpleCaliburnAdmin.Views"
-         xmlns:caliburn="http://www.caliburnproject.org"
-        TitleCharacterCasing="Normal" WindowStartupLocation="CenterScreen"
-        SaveWindowPosition="True"
-         controls:DialogParticipation.Register="{Binding}"
-        mc:Ignorable="d"
-        Title="ShellView" Height="450" Width="800">
+                      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                      xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
+                      xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+                      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                      xmlns:local="clr-namespace:PurpleCaliburnAdmin.Views"
+                      xmlns:caliburn="http://www.caliburnproject.org"
+                      Title="Purple Caliburn Admin" TitleCharacterCasing="Normal"
+                      WindowStartupLocation="CenterScreen"
+                      SaveWindowPosition="True"
+                      TitleTemplate="{StaticResource purpleMidWindow}" 
+                      controls:DialogParticipation.Register="{Binding}"
+                      mc:Ignorable="d"  d:DesignHeight="768" d:DesignWidth="1024">
+    <controls:MetroWindow.Resources>
+        <Style x:Key="FlyoutMenuStyle"
+               BasedOn="{StaticResource {x:Type controls:Flyout}}"
+               TargetType="{x:Type controls:Flyout}">
+            <Setter Property="Header" Value="{x:Null}" />
+            <Setter Property="IsOpen" Value="{Binding IsOpen}" />
+            <Setter Property="Position" Value="{Binding Position}" />
+            <Setter Property="Theme" Value="{Binding Theme}" />
+            <Setter Property="Background" Value="#E8F4FF" />
+        </Style>
+    </controls:MetroWindow.Resources>
+    <controls:MetroWindow.Flyouts>
+        <controls:FlyoutsControl x:Name="rightFlyoutBar"
+                                 ItemsSource="{Binding RightFlyoutBars}" ItemContainerStyle="{StaticResource FlyoutMenuStyle}" >
+            <controls:FlyoutsControl.ItemTemplate>
+                <DataTemplate>
+                    <ContentControl caliburn:View.Model="{Binding}" />
+                </DataTemplate>
+            </controls:FlyoutsControl.ItemTemplate>
+        </controls:FlyoutsControl>
+    </controls:MetroWindow.Flyouts>
+
+
+
     <Grid>
-        
+
     </Grid>
 </controls:MetroWindow>

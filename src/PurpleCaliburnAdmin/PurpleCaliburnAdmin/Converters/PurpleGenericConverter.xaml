@@ -1,0 +1,9 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:converter ="clr-namespace:PurpleCaliburnAdmin.Converters">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary>
+            <converter:AccessDeniedConverter x:Key="accessDeniedConverter" />
+        </ResourceDictionary>
+    </ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>

@@ -61,14 +61,12 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Converters\AccessDeniedConverter.cs" />
     <Compile Include="IShell.cs" />
     <Compile Include="Models\FlyoutMenuItemEntryModel.cs" />
     <Compile Include="ViewModels\Flyouts\MenuFlyoutViewModel.cs" />
     <Compile Include="ViewModels\Flyouts\RightBarFlyoutViewModel.cs" />
     <Compile Include="ViewModels\ShellViewModel.cs" />
-    <Compile Include="Views\Flyouts\RightBarFlyoutView.xaml.cs">
-      <DependentUpon>RightBarFlyoutView.xaml</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppBootstrapper.cs" />
@@ -99,8 +97,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Assets\" />
-    <Folder Include="Converts\" />
-    <Folder Include="Styles\" />
     <Folder Include="Utils\" />
     <Folder Include="ViewModels\Components\" />
     <Folder Include="ViewModels\Dialogs\" />
@@ -131,6 +127,14 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Converters\PurpleGenericConverter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\PurpleAdminGeneric.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Flyouts\RightBarFlyoutView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
