@@ -14,22 +14,23 @@
                            Foreground="White"
                            VerticalAlignment="Center"/>
             <StackPanel Grid.Column="1" Orientation="Horizontal" Margin="8 0">
-              
-                <Button   Background="Transparent"  Height="28px" Width="28px" 
-                        BorderBrush="Transparent">
-                    <iconPacks:PackIconMaterialDesign  Kind="ArrowBack"  VerticalAlignment="Center"
+
+                <Button  caliburn:Message.Attach="[Event Click] =[Action NavigateForward]"
+                    Background="Transparent"  Height="28px" Width="28px"  BorderBrush="Transparent">
+                    <iconPacks:PackIconMaterial  Kind="ArrowLeft"  VerticalAlignment="Center"
                                                        HorizontalAlignment="Center" Foreground="WhiteSmoke" Width="12" Height="12"/>
 
                 </Button>
-                <Button  Background="Transparent"  Height="28px" Width="28px" VerticalAlignment="Center"
-          BorderBrush="Transparent">
-                    <iconPacks:PackIconMaterialDesign  Kind="ArrowForward"  VerticalAlignment="Center"
+                <Button   caliburn:Message.Attach="[Event Click] =[Action NavigateBackward]"
+                    Background="Transparent"  Height="28px" Width="28px" VerticalAlignment="Center" BorderBrush="Transparent">
+                    <iconPacks:PackIconMaterial  Kind="ArrowRight"  VerticalAlignment="Center"
                                      HorizontalAlignment="Center" Foreground="WhiteSmoke"  Width="12" Height="12" />
                 </Button>
 
-                <Button   Background="Transparent" Height="24px" Width="320px" VerticalAlignment="Center" Margin="8 0 ">
+                <Button   caliburn:Message.Attach="[Event Click] =[Action ShowSearchBar]"
+                    Background="Transparent" Height="24px" Width="320px" VerticalAlignment="Center" Margin="8 0 ">
                     <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
-                        <iconPacks:PackIconMaterialDesign  Kind="Search"  VerticalAlignment="Center"
+                        <iconPacks:PackIconMaterial  Kind="Magnify"  VerticalAlignment="Center"
                  HorizontalAlignment="Center" Foreground="WhiteSmoke"  Width="12" Height="12" />
                         <TextBlock Text="Please Input Key Word ..." Margin="8 0 "
                                    Foreground="WhiteSmoke" FontWeight="Light"></TextBlock>
@@ -38,4 +39,20 @@
             </StackPanel>
         </Grid>
     </DataTemplate>
+
+    <Style x:Key="FlyoutPageStyle"
+               BasedOn="{StaticResource {x:Type controls:Flyout}}"
+               TargetType="{x:Type controls:Flyout}">
+        <Setter Property="Header" Value="{x:Null}" />
+        <Setter Property="IsOpen" Value="{Binding IsOpen}" />
+        <Setter Property="Position" Value="{Binding Position}" />
+        <Setter Property="Theme" Value="{Binding Theme}" />
+        <Setter Property="Margin" Value="{Binding Margin}" />
+        <Setter Property="CloseButtonVisibility" Value="{Binding CloseButtonVisibility}" />
+        <Setter Property="IsModal" Value="{Binding IsModal}" />
+        <Setter Property="IsPinned" Value="{Binding IsPinned}" />
+        <Setter Property="TitleVisibility" Value="{Binding TitleVisibility}" />
+        <Setter Property="Background" Value="Transparent" />
+        
+    </Style>
 </ResourceDictionary>

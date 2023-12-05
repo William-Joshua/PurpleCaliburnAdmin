@@ -9,13 +9,11 @@ using System.Threading.Tasks;
 
 namespace PurpleCaliburnAdmin.ViewModels.Flyouts
 {
-    public class RightBarFlyoutViewModel:MenuFlyoutViewModel
+    public class RightBarFlyoutViewModel:FlyoutPageViewModel
     {
-        public IObservableCollection<FlyoutMenuItemEntryModel> FlyoutMenuItems { get; set; }
-        public RightBarFlyoutViewModel(List<FlyoutMenuItemEntryModel> flyoutMenuItems)
+        public RightBarFlyoutViewModel()
         {
             this.Position = Position.Right;
-            FlyoutMenuItems = new BindableCollection<FlyoutMenuItemEntryModel>(flyoutMenuItems);
         }
     }
 }

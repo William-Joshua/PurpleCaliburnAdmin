@@ -64,9 +64,13 @@
     <Compile Include="Converters\AccessDeniedConverter.cs" />
     <Compile Include="IShell.cs" />
     <Compile Include="Models\FlyoutMenuItemEntryModel.cs" />
-    <Compile Include="ViewModels\Flyouts\MenuFlyoutViewModel.cs" />
+    <Compile Include="ViewModels\Flyouts\FlyoutPageViewModel.cs" />
     <Compile Include="ViewModels\Flyouts\RightBarFlyoutViewModel.cs" />
+    <Compile Include="ViewModels\Flyouts\SearchBarFlyoutViewModel.cs" />
     <Compile Include="ViewModels\ShellViewModel.cs" />
+    <Compile Include="Views\Flyouts\SearchBarFlyoutView.xaml.cs">
+      <DependentUpon>SearchBarFlyoutView.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppBootstrapper.cs" />
@@ -136,6 +140,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Flyouts\RightBarFlyoutView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Flyouts\SearchBarFlyoutView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

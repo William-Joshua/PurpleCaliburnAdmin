@@ -12,21 +12,10 @@
                       SaveWindowPosition="True"
                       TitleTemplate="{StaticResource purpleMidWindow}" 
                       controls:DialogParticipation.Register="{Binding}"
-                      mc:Ignorable="d"  d:DesignHeight="768" d:DesignWidth="1024">
-    <controls:MetroWindow.Resources>
-        <Style x:Key="FlyoutMenuStyle"
-               BasedOn="{StaticResource {x:Type controls:Flyout}}"
-               TargetType="{x:Type controls:Flyout}">
-            <Setter Property="Header" Value="{x:Null}" />
-            <Setter Property="IsOpen" Value="{Binding IsOpen}" />
-            <Setter Property="Position" Value="{Binding Position}" />
-            <Setter Property="Theme" Value="{Binding Theme}" />
-            <Setter Property="Background" Value="#E8F4FF" />
-        </Style>
-    </controls:MetroWindow.Resources>
+                      mc:Ignorable="d" d:DesignHeight="768" d:DesignWidth="1024">
     <controls:MetroWindow.Flyouts>
-        <controls:FlyoutsControl x:Name="rightFlyoutBar"
-                                 ItemsSource="{Binding RightFlyoutBars}" ItemContainerStyle="{StaticResource FlyoutMenuStyle}" >
+        <controls:FlyoutsControl x:Name="flyoutPageBar" 
+                                 ItemsSource="{Binding FlyoutPageBars}" ItemContainerStyle="{StaticResource FlyoutPageStyle}" >
             <controls:FlyoutsControl.ItemTemplate>
                 <DataTemplate>
                     <ContentControl caliburn:View.Model="{Binding}" />
@@ -34,6 +23,18 @@
             </controls:FlyoutsControl.ItemTemplate>
         </controls:FlyoutsControl>
     </controls:MetroWindow.Flyouts>
+
+    <controls:MetroWindow.RightWindowCommands>
+        <controls:WindowCommands ShowLastSeparator="False">
+            <Button ToolTip="PurpleCaliburnAdmin on GitHub"  caliburn:Message.Attach="[Event Click] = [Action OpenInBrowser]" >
+                <iconPacks:PackIconMaterial Kind="Github"  Width="16" Height="16"  VerticalAlignment="Center" />
+            </Button>
+
+            <Button>
+                <iconPacks:PackIconMaterial  Kind="ViewQuiltOutline" Width="16"  Height="16" VerticalAlignment="Center"  />
+            </Button>
+        </controls:WindowCommands>
+    </controls:MetroWindow.RightWindowCommands>
 
 
 
