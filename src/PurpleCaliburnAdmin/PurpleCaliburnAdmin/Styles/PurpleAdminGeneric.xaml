@@ -3,13 +3,20 @@
                     xmlns:controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
                     xmlns:caliburn="http://caliburnmicro.com"
                     xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks">
+
+    <DataTemplate x:Key="purpleIcon">
+        <Grid Margin="5 2">
+            <Image Source="pack://application:,,,/favico.ico" Width="22" Height="22" ></Image>
+        </Grid>
+    </DataTemplate>
+    
     <DataTemplate x:Key="purpleMidWindow" >
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" ></ColumnDefinition>
                 <ColumnDefinition Width="2*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <TextBlock Grid.Column="0" Text="{Binding Path=Title, RelativeSource={RelativeSource AncestorType=controls:MetroWindow}}"
+            <TextBlock Margin="8 0" Grid.Column="0" Text="{Binding Path=Title, RelativeSource={RelativeSource AncestorType=controls:MetroWindow}}"
                            FontSize="14"
                            Foreground="White"
                            VerticalAlignment="Center"/>

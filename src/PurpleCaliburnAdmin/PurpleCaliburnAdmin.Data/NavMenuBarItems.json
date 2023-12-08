@@ -1,0 +1,120 @@
+{
+  "menus": [
+    {
+      "name": "dashboard",
+      "title": "Dashboard",
+      "iconType": "Home",
+      "url": "Pages.DashboardPageViewModel",
+      "master": false,
+      "subArrow": false
+    },
+    {
+      "name": "basic_ui_elements",
+      "title": "Basic UI Elements",
+      "iconType": "CrosshairsGps",
+      "url": "",
+      "master": false,
+      "subArrow": true,
+      "submenus": [
+        {
+          "name": "buttons",
+          "title": "Buttons",
+          "url": "Pages.ButtonsPageViewModel",
+          "master": true
+        },
+        {
+          "name": "badges",
+          "title": "Badges",
+          "url": "Pages.BadgesPageViewModel",
+          "master": true
+        },
+        {
+          "name": "typography",
+          "title": "Typography",
+          "url": "",
+          "master": true
+        }
+      ]
+    },
+    {
+      "name": "icons",
+      "title": "Icons",
+      "iconType": "Contacts",
+      "url": "",
+      "master": true,
+      "subArrow": false
+    },
+    {
+      "name": "forms",
+      "title": "Forms",
+      "iconType": "FormatListBulleted",
+      "url": "",
+      "master": true,
+      "subArrow": false
+    },
+    {
+      "name": "charts",
+      "title": "Charts",
+      "iconType": "ChartBar",
+      "url": "",
+      "master": true,
+      "subArrow": false
+    },
+    {
+      "name": "tables",
+      "title": "Tables",
+      "iconType": "TableLarge",
+      "url": "",
+      "master": true,
+      "subArrow": true,
+      "submenus": [
+        {
+          "name": "basic_table",
+          "title": "Basic Table",
+          "url": "Pages.BasicTablePageViewModel",
+          "master": true
+        },
+        {
+          "name": "data_table",
+          "title": "Data table",
+          "url": "Pages.DataTablePageViewModel",
+          "master": true
+        }
+      ]
+    },
+    {
+      "name": "user_pages",
+      "title": "User Pages",
+      "iconType": "MedicalBag",
+      "url": "",
+      "master": true,
+      "subArrow": true,
+      "submenus": [
+        {
+          "name": "login",
+          "title": "Login",
+          "url": "Pages.LoginPageViewModel",
+          "master": false
+        },
+        {
+          "name": "register",
+          "title": "Register",
+          "url": "",
+          "master": false
+        },
+        {
+          "name": "_404",
+          "title": "404",
+          "url": "",
+          "master": false
+        },
+        {
+          "name": "_500",
+          "title": "500",
+          "url": "",
+          "master": false
+        }
+      ]
+    }
+  ]
+}

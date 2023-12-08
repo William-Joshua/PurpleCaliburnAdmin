@@ -6,7 +6,8 @@
                       xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
                       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                       xmlns:local="clr-namespace:PurpleCaliburnAdmin.Views"
-                      xmlns:caliburn="http://www.caliburnproject.org"
+                      xmlns:caliburn="http://www.caliburnproject.org" 
+                      IconTemplate="{StaticResource purpleIcon}"
                       Title="Purple Caliburn Admin" TitleCharacterCasing="Normal"
                       WindowStartupLocation="CenterScreen"
                       SaveWindowPosition="True"
@@ -23,7 +24,6 @@
             </controls:FlyoutsControl.ItemTemplate>
         </controls:FlyoutsControl>
     </controls:MetroWindow.Flyouts>
-
     <controls:MetroWindow.RightWindowCommands>
         <controls:WindowCommands ShowLastSeparator="False">
             <Button ToolTip="PurpleCaliburnAdmin on GitHub"  caliburn:Message.Attach="[Event Click] = [Action OpenInBrowser]" >
@@ -35,10 +35,87 @@
             </Button>
         </controls:WindowCommands>
     </controls:MetroWindow.RightWindowCommands>
-
-
-
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width ="*" />
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0">
+            <ContentControl x:Name="NavBarItem"></ContentControl>
+        </Grid>
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="70"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="260" />
+                    <ColumnDefinition Width ="*" />
+                </Grid.ColumnDefinitions>
+                <StackPanel  Orientation="Horizontal"  DockPanel.Dock="Left" Grid.Column="0">
+                    <Grid  Width="49"  Background="Transparent" >
+                        <Grid.Style>
+                            <Style TargetType="Grid">
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True"></Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Grid.Style>
+                        <iconPacks:PackIconMaterial Kind="Menu"  Cursor="Hand"  Width="20" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#9c9fa6"></iconPacks:PackIconMaterial>
+                    </Grid>
+                    <Grid Width="40">
+                        <iconPacks:PackIconMaterial Kind="Magnify" Width="14" VerticalAlignment="Center"  Foreground="#9c9fa6" HorizontalAlignment="Center" ></iconPacks:PackIconMaterial>
+                    </Grid>
+                    <Grid>
+                        <TextBox Width="180" BorderThickness="0" VerticalAlignment="Center" controls:TextBoxHelper.Watermark="Search projects" ></TextBox>
+                    </Grid>
+                </StackPanel>
+                <DockPanel  Grid.Column="1">
+                    <Grid Width="54" DockPanel.Dock="Right"  Background="Transparent"  >
+                        <iconPacks:PackIconMaterial Kind="FormatLineSpacing" VerticalAlignment="Center" HorizontalAlignment="Center" Cursor="Hand"    Foreground="#9c9fa6"  Name="Spacing"  ></iconPacks:PackIconMaterial>
+                    </Grid>
+                    <Grid Width="54" DockPanel.Dock="Right"  Background="Transparent" >
+                        <iconPacks:PackIconMaterial Kind="Power" VerticalAlignment="Center" HorizontalAlignment="Center" Cursor="Hand"    Foreground="#9c9fa6"  Name="Power"  ></iconPacks:PackIconMaterial>
+                    </Grid>
+                    <Grid Width="54" DockPanel.Dock="Right" Background="Transparent" >
 
+                        <Grid Width ="20" Height="36">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="10"></RowDefinition>
+                                <RowDefinition  Height="*"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <iconPacks:PackIconMaterial Kind="Circle" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Right" Width="5" Foreground="#fe7c96"></iconPacks:PackIconMaterial>
+                            <iconPacks:PackIconMaterial Kind="BellOutline" Grid.Row="1"  Cursor="Hand"  VerticalAlignment="Top" HorizontalAlignment="Center"   Foreground="#9c9fa6">
+                            </iconPacks:PackIconMaterial>
+                        </Grid>
+                    </Grid>
+                    <Grid Width="54"  DockPanel.Dock="Right" Background="Transparent" >
+                        <Grid Width ="20" Height="36">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="10"></RowDefinition>
+                                <RowDefinition  Height="*"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <iconPacks:PackIconMaterial Kind="Circle" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Right" Width="5" Foreground="#fed713"></iconPacks:PackIconMaterial>
+                            <iconPacks:PackIconMaterial Kind="EmailOutline" Cursor="Hand"  Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Center"    Foreground="#9c9fa6">
+                            </iconPacks:PackIconMaterial>
+                        </Grid>
+                    </Grid>
+                    <Grid Width="54" DockPanel.Dock="Right" Background="Transparent" >
+                        <iconPacks:PackIconMaterial Kind="Fullscreen" VerticalAlignment="Center" HorizontalAlignment="Center"   Foreground="#9c9fa6"></iconPacks:PackIconMaterial>
+                    </Grid>
+                    <Grid Width="54" DockPanel.Dock="Right" Background="Transparent" >
+                        <iconPacks:PackIconMaterial Kind="WindowMinimize" VerticalAlignment="Center" HorizontalAlignment="Center"   Foreground="#9c9fa6"></iconPacks:PackIconMaterial>
+                    </Grid>
+                    <Grid Width="180" DockPanel.Dock="Right" Background="Transparent">
+                        <ContentControl x:Name="LoginUserCardInfo"></ContentControl>
+                    </Grid>
+                    <Grid></Grid>
+                </DockPanel>
+            </Grid>
+            <Grid Grid.Row="1" Grid.Column="1"  Background="#f2edf3">
+                <ContentControl />
+            </Grid>
+        </Grid>
     </Grid>
 </controls:MetroWindow>
