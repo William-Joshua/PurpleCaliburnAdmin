@@ -68,9 +68,11 @@
     <Compile Include="IShell.cs" />
     <Compile Include="Models\FlyoutMenuItemEntryModel.cs" />
     <Compile Include="Models\NavigateMenusRootObject.cs" />
+    <Compile Include="ViewModels\Components\MenuSideBarViewModel.cs" />
     <Compile Include="ViewModels\Flyouts\FlyoutPageViewModel.cs" />
     <Compile Include="ViewModels\Flyouts\RightBarFlyoutViewModel.cs" />
     <Compile Include="ViewModels\Flyouts\SearchBarFlyoutViewModel.cs" />
+    <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\ShellViewModel.cs" />
     <Compile Include="Views\Flyouts\SearchBarFlyoutView.xaml.cs">
       <DependentUpon>SearchBarFlyoutView.xaml</DependentUpon>
@@ -105,9 +107,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Utils\" />
-    <Folder Include="ViewModels\Components\" />
     <Folder Include="ViewModels\Dialogs\" />
-    <Folder Include="Views\Components\" />
     <Folder Include="Views\Dialogs\" />
   </ItemGroup>
   <ItemGroup>
@@ -116,6 +116,9 @@
     </PackageReference>
     <PackageReference Include="gong-wpf-dragdrop">
       <Version>3.2.1</Version>
+    </PackageReference>
+    <PackageReference Include="LiveCharts.Wpf">
+      <Version>0.9.7</Version>
     </PackageReference>
     <PackageReference Include="MahApps.Metro">
       <Version>3.0.0-alpha0457</Version>
@@ -142,11 +145,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\Components\MenuSideBarView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Flyouts\RightBarFlyoutView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Flyouts\SearchBarFlyoutView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\LoginView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

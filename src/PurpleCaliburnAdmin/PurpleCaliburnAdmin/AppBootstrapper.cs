@@ -74,7 +74,7 @@ namespace PurpleCaliburnAdmin
         {
             try
             {
-                await this.DisplayRootViewForAsync<IShell>();
+                await this.DisplayRootViewForAsync<LoginViewModel>();
             }
             catch (Exception exception)
             {

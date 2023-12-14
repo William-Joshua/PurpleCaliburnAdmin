@@ -62,4 +62,53 @@
         <Setter Property="Background" Value="Transparent" />
         
     </Style>
+
+    <Style x:Key="purpleSidebar" TargetType="ItemsControl">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ItemsControl}">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="84"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="0">
+                            <Grid Width="188" Background="Transparent" Cursor="Hand" >
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="44"></ColumnDefinition>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                    <ColumnDefinition Width=" 18"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Grid Grid.Column="0" Height="44">
+                                    <Grid.Clip>
+                                        <EllipseGeometry Center="22,22" RadiusX="22" RadiusY="22">
+                                        </EllipseGeometry>
+                                    </Grid.Clip>
+                                    <Image Name="accountFace" Source="pack://application:,,,/Assets/accountface.jpg" RenderOptions.BitmapScalingMode="HighQuality"></Image>
+                                </Grid>
+                                <Grid Grid.Column="2" Height="18">
+                                    <iconPacks:PackIconMaterial Kind="BookmarkCheck" Foreground="#1bcfb4"></iconPacks:PackIconMaterial>
+                                </Grid>
+                                <Grid Grid.Column="1" Height="34" Width="90">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="14"></RowDefinition>
+                                        <RowDefinition Height="*"></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <Grid Grid.Row="0">
+                                        <TextBlock Text="David Grey. H" FontFamily="ubuntu-bold" FontSize="12" FontWeight="Bold" TextAlignment="Center" Foreground="#343a40"></TextBlock>
+                                    </Grid>
+                                    <Grid Grid.Row="1">
+                                        <TextBlock Text="Project Manager" FontFamily="ubuntu-regular" FontSize="11" Foreground="#C3BDBF" TextAlignment="Center"></TextBlock>
+                                    </Grid>
+                                </Grid>
+                            </Grid>
+                        </Grid>
+                        <ItemsPresenter Grid.Row="1"></ItemsPresenter>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="purpleSidebarLite" TargetType="ItemsControl"></Style>
+
 </ResourceDictionary>

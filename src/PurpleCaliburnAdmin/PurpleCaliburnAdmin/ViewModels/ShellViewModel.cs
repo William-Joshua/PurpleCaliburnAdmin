@@ -1,6 +1,7 @@
 ﻿using Caliburn.Micro;
 using MahApps.Metro.Controls;
 using MahApps.Metro.Controls.Dialogs;
+using PurpleCaliburnAdmin.ViewModels.Components;
 using PurpleCaliburnAdmin.ViewModels.Flyouts;
 using System;
 using System.Collections.Generic;
@@ -21,6 +22,10 @@ namespace PurpleCaliburnAdmin.ViewModels
 
         public IObservableCollection<FlyoutPageViewModel> FlyoutPageBars { get; set; }
 
+
+        public MenuSideBarViewModel SiderBarMenus { get; set; }
+
+
         [ImportingConstructor]
         public ShellViewModel(IWindowManager windowManager, IDialogCoordinator dialogCoordinator )
         {
@@ -32,6 +37,7 @@ namespace PurpleCaliburnAdmin.ViewModels
         private void InitializeShellView()
         {
             this.FlyoutPageBars = new BindableCollection<FlyoutPageViewModel>();
+            this.SiderBarMenus = new MenuSideBarViewModel();
         }
 
 

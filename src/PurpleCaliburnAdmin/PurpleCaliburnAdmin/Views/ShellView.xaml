@@ -35,19 +35,20 @@
             </Button>
         </controls:WindowCommands>
     </controls:MetroWindow.RightWindowCommands>
+
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="auto" />
-            <ColumnDefinition Width ="*" />
-        </Grid.ColumnDefinitions>
-        <Grid Grid.Column="0">
-            <ContentControl x:Name="NavBarItem"></ContentControl>
-        </Grid>
-        <Grid Grid.Column="1">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="70"></RowDefinition>
-                <RowDefinition Height="*"></RowDefinition>
-            </Grid.RowDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width ="*" />
+            </Grid.ColumnDefinitions>
+            <Grid Cursor="Hand" Width="260">
+                <Image  Name="purpleLogo"  Source="pack://application:,,,/Assets/logo.png" Width="140" Height="28"  RenderOptions.BitmapScalingMode="HighQuality"></Image>
+            </Grid>
             <Grid Grid.Column="1">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="260" />
@@ -113,9 +114,22 @@
                     <Grid></Grid>
                 </DockPanel>
             </Grid>
-            <Grid Grid.Row="1" Grid.Column="1"  Background="#f2edf3">
-                <ContentControl />
-            </Grid>
         </Grid>
+
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" >
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width ="*" />
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0">
+                    <ContentControl x:Name="SiderBarMenus" Background="White"></ContentControl>
+                </Grid>
+                <Grid Grid.Column="1"  Background="#f2edf3">
+                    <ContentControl></ContentControl>
+                </Grid>
+            </Grid>
+
+        </ScrollViewer>
     </Grid>
 </controls:MetroWindow>
